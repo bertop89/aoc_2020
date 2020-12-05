@@ -1,7 +1,7 @@
 import math
 
 
-def binary_space_partition(line, size, fn):
+def binary_space_partition(line, size):
     left = 0
     right = size
     for char in line:
@@ -16,8 +16,8 @@ def binary_space_partition(line, size, fn):
 seat_ids = []
 with open("input.txt", 'r') as file:
     for line in file:
-        row = binary_space_partition(line[:7], 127, min)
-        col = binary_space_partition(line[7:], 7, max)
+        row = binary_space_partition(line[:7], 127)
+        col = binary_space_partition(line[7:], 7)
         seat_id = row*8 + col
         seat_ids.append(seat_id)
 
